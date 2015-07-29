@@ -1,9 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="c:\Users\IIT User\Documents\GitHub\BarFight\Assets\Plugins\ChatApi\ChatClient.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\NetworkManager.cs">
     <Files>
-      <File FileName="Assets\NetworkManager.cs" Line="21" Column="35" />
-      <File FileName="c:\Users\IIT User\Documents\GitHub\BarFight\Assets\Plugins\ChatApi\ChatClient.cs" Line="97" Column="85" />
+      <File FileName="Assets\NetworkManager.cs" Line="45" Column="112" />
+      <File FileName="Assets\SpawnSpot.cs" Line="6" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
