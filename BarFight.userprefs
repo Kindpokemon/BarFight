@@ -1,0 +1,13 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="c:\Users\IIT User\Documents\GitHub\BarFight\Assets\Plugins\ChatApi\ChatClient.cs">
+    <Files>
+      <File FileName="Assets\NetworkManager.cs" Line="21" Column="35" />
+      <File FileName="c:\Users\IIT User\Documents\GitHub\BarFight\Assets\Plugins\ChatApi\ChatClient.cs" Line="97" Column="85" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
