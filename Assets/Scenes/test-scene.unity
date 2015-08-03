@@ -128,7 +128,7 @@ GameObject:
   - 92: {fileID: 712203155}
   - 81: {fileID: 712203154}
   m_Layer: 0
-  m_Name: StandbyCameraa
+  m_Name: StandbyCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -411,7 +411,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 348f015ceb7bdff4aa3882d7de40b38a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  standByCamera: {fileID: 712203157}
+  standByCamera: {fileID: 712203153}
 --- !u!1 &1629909820 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: b6defe993afff904d8308ee1b4284d96, type: 3}

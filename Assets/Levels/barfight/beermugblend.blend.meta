@@ -4,7 +4,21 @@ timeCreated: 1438356165
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Cylinder
+    100004: Torus
+    400000: //RootNode
+    400002: Cylinder
+    400004: Torus
+    2300000: Cylinder
+    2300002: Torus
+    3300000: Cylinder
+    3300002: Torus
+    4300000: Torus
+    4300002: Cylinder
+    7400000: Default Take
+    9500000: //RootNode
   materials:
     importMaterials: 1
     materialName: 0
