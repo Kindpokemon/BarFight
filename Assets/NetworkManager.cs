@@ -9,10 +9,10 @@ public class NetworkManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		spawnSpots = GameObject.FindObjectsOfType<SpawnSpot> ();
-		Connect ();	
+		CloudConnect ();
 	}
 
-	void Connect(){
+	void CloudConnect(){
 		PhotonNetwork.ConnectUsingSettings( "v0.0.1");
 		//PhotonNetwork.offlineMode = true;
 	}
