@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-
+[System.Serializable]
 public class NetworkCharacter : Photon.MonoBehaviour {
 	
 	public Vector3 realPosition = Vector3.zero;
@@ -25,34 +25,23 @@ public class NetworkCharacter : Photon.MonoBehaviour {
 			//Debug.Log(realPosition);
 			myPosition = realPosition;
 			myRotation = realRotation;
-			this.transform.position = Vector3.Lerp(this.transform.position, realPosition, 0.1f);
-			this.transform.rotation = Quaternion.Lerp(this.transform.rotation, realRotation, 0.1f);
+			this.transform.position = Vector3.Lerp(this.transform.position, this.realPosition, Time.deltaTime);
+			this.transform.rotation = Quaternion.Lerp(this.transform.rotation, this.realRotation, Time.deltaTime);
 		}
 	}
 	
-	public void onPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
+	void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+	{
+		Debug.Log ("yes");
 
-		if(stream.isWriting) {
-			// This is OUR player. We need to send our actual position to the network.
-			
-			stream.SendNext(myPosition);
-			stream.SendNext(myRotation);
-
-			Debug.Log("Sent position: " + myPosition);
-			Debug.Log("Sent rotation: " + myRotation);
-
+		if (stream.isWriting) {
+			//We own this player: send the others our data
+			stream.SendNext (transform.position);
+			stream.SendNext (transform.rotation);
+		} else {
+			//Network player, receive data
+			this.realPosition = (Vector3)stream.ReceiveNext ();
+			this.realRotation = (Quaternion)stream.ReceiveNext ();
 		}
-		else {
-			// This is someone else's player. We need to receive their position (as of a few
-			// millisecond ago, and update our version of that player.
-			
-			realPosition = (Vector3)stream.ReceiveNext();
-			realRotation = (Quaternion)stream.ReceiveNext();
-
-			Debug.Log("Got position: " + realPosition);
-			Debug.Log("Got rotation: " + realRotation);
-
-		}
-		
 	}
 }

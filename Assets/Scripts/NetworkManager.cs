@@ -49,7 +49,7 @@ public class NetworkManager : MonoBehaviour {
 		((MonoBehaviour)myPlayerGameObject.GetComponent ("FirstPersonController")).enabled = true;
 		myPlayerGameObject.GetComponent<AudioSource>().enabled = true;
 		//((MonoBehaviour)myPlayerGameObject.GetComponent ("FirstPersonController")).enabled = true;
-		myPlayerGameObject.transform.GetChild (3).gameObject.SetActive (true);
+		myPlayerGameObject.transform.GetChild (0).gameObject.SetActive (true);
 
 	}
 }

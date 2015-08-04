@@ -116,9 +116,11 @@
      <Compile Include="Assets\Plugins\UtilityScripts\SupportLogger.cs" />
      <Compile Include="Assets\Plugins\UtilityScripts\TimeKeeper.cs" />
      <Compile Include="Assets\Plugins\WebSocket\WebSocket.cs" />
+     <None Include="Assets\Levels\barfight\images\Pool Ball Skins\source(2).txt" />
      <None Include="Assets\Plugins\Photon3Unity3D.xml" />
      <None Include="Assets\Plugins\release_history.txt" />
      <None Include="Assets\_IMPORTED\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
+     <None Include="Assets\Levels\barfight\images\Pool Ball Skins\source.txt" />
      <None Include="Assets\Photon Unity Networking\readme.txt" />
      <None Include="Assets\_IMPORTED\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
      <None Include="Assets\_IMPORTED\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
