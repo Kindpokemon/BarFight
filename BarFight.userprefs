@@ -1,10 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\NetworkCharacter.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ItemDatabase.cs">
     <Files>
-      <File FileName="Assets\Scripts\NetworkCharacter.cs" Line="42" Column="12" />
-      <File FileName="Assets\Scripts\NetworkManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Plugins\PhotonNetwork\PhotonView.cs" Line="527" Column="1" />
+      <File FileName="Assets\Scripts\GrabItem.cs" Line="22" Column="1" />
+      <File FileName="Assets\Scripts\ItemDatabase.cs" Line="16" Column="30" />
+      <File FileName="Assets\Scripts\Item.cs" Line="40" Column="4" />
+      <File FileName="Assets\Scripts\ItemInfo.cs" Line="19" Column="30" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
