@@ -4,8 +4,7 @@ using System.Collections;
 public class NetworkManager : MonoBehaviour {
 
 	public GameObject standByCamera;
-	SpawnSpot[] spawnSpots;
-
+	public SpawnSpot[] spawnSpots;
 
 	// Use this for initialization
 	void Start () {
@@ -15,6 +14,7 @@ public class NetworkManager : MonoBehaviour {
 
 	void CloudConnect(){
 		PhotonNetwork.ConnectUsingSettings( "v0.0.1");
+		Debug.Log ("CloudConnect");
 		//PhotonNetwork.offlineMode = true;
 	}
 
@@ -25,6 +25,7 @@ public class NetworkManager : MonoBehaviour {
 
 	void OnJoinedLobby() {
 		PhotonNetwork.JoinRandomRoom ();
+		Debug.Log ("Joined Lobby");
 	}
 
 	void OnPhotonRandomJoinFailed() {
@@ -32,12 +33,14 @@ public class NetworkManager : MonoBehaviour {
 	}
 
 	void OnJoinedRoom() {
+		Debug.Log ("Joined Room!");
 
 
 		SpawnMyPlayer ();
+
 	}
 
-	void SpawnMyPlayer(){
+	public void SpawnMyPlayer(){
 		if (spawnSpots == null) {
 			Debug.Log("No Spawn Spots. Tell the server owner, he's using a custom map.");
 			return;
@@ -47,9 +50,18 @@ public class NetworkManager : MonoBehaviour {
 		standByCamera.SetActive(false);
 
 		((MonoBehaviour)myPlayerGameObject.GetComponent ("FirstPersonController")).enabled = true;
-		myPlayerGameObject.GetComponent<AudioSource>().enabled = true;
+		myPlayerGameObject.GetComponent<CharacterController> ().enabled = true;
+		myPlayerGameObject.GetComponent<GrabItem> ().enabled = true;
+		myPlayerGameObject.GetComponent<EscMenu> ().enabled = true;
+		Debug.Log (myPlayerGameObject.GetComponent<GrabItem> ());
+		myPlayerGameObject.GetComponent<GrabItem> ().enabled = true;
+
+		myPlayerGameObject.transform.GetChild(0).GetComponent<AudioListener>().enabled = true;
+		myPlayerGameObject.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(1).tag = "MyFist";
+		myPlayerGameObject.tag = "Player";
 		//((MonoBehaviour)myPlayerGameObject.GetComponent ("FirstPersonController")).enabled = true;
-		myPlayerGameObject.transform.GetChild (0).gameObject.SetActive (true);
+		myPlayerGameObject.transform.GetChild (0).GetComponent<Camera>().enabled = true;
 
 	}
+	
 }

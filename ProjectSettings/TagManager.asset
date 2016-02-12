@@ -5,6 +5,17 @@ TagManager:
   serializedVersion: 2
   tags:
   - ItemDatabase
+  - StaticObjects
+  - A
+  - B
+  - Shell
+  - MyFist
+  - ShellFist
+  - WholeHealth
+  - HealthName
+  - HealthBox
+  - HealthCanvas
+  - StandbyCamera
   layers:
   - Default
   - TransparentFX

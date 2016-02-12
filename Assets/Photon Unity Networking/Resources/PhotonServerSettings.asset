@@ -11,13 +11,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f3758f8f58fdef43803eb9be1df0608, type: 3}
   m_Name: PhotonServerSettings
   m_EditorClassIdentifier: 
-  HostType: 1
+  HostType: 3
   Protocol: 0
   ServerAddress: 
   ServerPort: 5055
   AppID: 68d9739b-da77-47e6-98b6-500b1a2ee5a6
-  PreferredRegion: 0
+  PreferredRegion: 1
   EnabledRegions: -1
+  JoinLobby: 0
+  EnableLobbyStatistics: 0
   RpcList:
   - Chat
   - ColorRpc

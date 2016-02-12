@@ -13,7 +13,13 @@ public class EscMenu : MonoBehaviour {
 	const int buttonHeight = 60;
 	public bool activeEsc;
 	public GameObject player;
-	
+	public PhotonPlayer newMaster;
+	public HealthController hController;
+
+	void Start(){
+		hController = gameObject.GetComponent<HealthController> ();
+	}
+
 	// Apply requested cursor state
 	void SetCursorState ()
 	{
@@ -27,13 +33,16 @@ public class EscMenu : MonoBehaviour {
 		if (Input.GetKeyDown (KeyCode.Escape)) {
 			activeEsc = !activeEsc;
 		}
-
 		if (activeEsc) {
 			wantedMode = CursorLockMode.None;
 			((MonoBehaviour)player.GetComponent ("FirstPersonController")).enabled = false;
+			((MonoBehaviour)player.GetComponent ("GrabItem")).enabled = false;
+
 		} else {
 			wantedMode = CursorLockMode.Locked;
 			((MonoBehaviour)player.GetComponent ("FirstPersonController")).enabled = true;
+			((MonoBehaviour)player.GetComponent ("GrabItem")).enabled = true;
+
 		}
 
 		SetCursorState();
@@ -60,7 +69,7 @@ public class EscMenu : MonoBehaviour {
 				GUILayout.Width (buttonWidth),
 				GUILayout.Height (buttonHeight)
 			})) {
-				
+				StartCoroutine(hController.KillMe());
 			}
 
 			GUILayout.Space (20);
@@ -78,6 +87,17 @@ public class EscMenu : MonoBehaviour {
 				GUILayout.Width (buttonWidth),
 				GUILayout.Height (buttonHeight)
 			})) {
+				if(PhotonNetwork.player.isMasterClient){
+					for(int l = 0; l < 100; l++){
+						if(PhotonPlayer.Find(l) != null && PhotonPlayer.Find(l) != PhotonNetwork.player){
+							newMaster = PhotonPlayer.Find(l);
+							PhotonNetwork.SetMasterClient(newMaster);
+							break;
+						}
+
+					}
+				}
+				PhotonNetwork.Disconnect();
 				Application.LoadLevel (0);
 			}
 		

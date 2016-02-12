@@ -7,7 +7,7 @@ public class Item {
 		Weapon,
 		PhysicsItem,
 		Ammo,
-		Immovable
+		None
 	}
 
 	public enum WeaponType{
@@ -24,8 +24,9 @@ public class Item {
 	public int hitDamage;
 	public int throwDamage;
 	public int defense;
+	public Vector3 rotation;
 
-	public Item(int id, string name, ItemType itype, WeaponType wtype, int hit, int damagethrow, int def){
+	public Item(int id, string name, ItemType itype, WeaponType wtype, int hit, int damagethrow, int def, float xRotate, float yRotate, float zRotate){
 		itemId = id;
 		itemName = name;
 		itemType = itype;
@@ -33,6 +34,9 @@ public class Item {
 		hitDamage = hit;
 		throwDamage = damagethrow;
 		defense = def;
+		rotation.x = xRotate;
+		rotation.y = yRotate;
+		rotation.z = zRotate;
 	}
 
 	//public Item(){
