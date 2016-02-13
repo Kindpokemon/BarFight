@@ -16,6 +16,7 @@ TagManager:
   - HealthBox
   - HealthCanvas
   - StandbyCamera
+  - Gamedata
   layers:
   - Default
   - TransparentFX

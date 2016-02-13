@@ -29,9 +29,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 107866}
-  m_LocalRotation: {x: -.707106829, y: 0, z: -0, w: .707106709}
-  m_LocalPosition: {x: 20.7199993, y: -8.43999958, z: 2.6400001}
-  m_LocalScale: {x: .600000024, y: .349999994, z: .0125000002}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalPosition: {x: 20.72, y: -8.44, z: 2.64}
+  m_LocalScale: {x: 0.6, y: 0.35, z: 0.0125}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -55,8 +55,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -75,9 +77,9 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 107866}
   serializedVersion: 2
-  m_Mass: 10
+  m_Mass: 100
   m_Drag: 0
-  m_AngularDrag: .0500000007
+  m_AngularDrag: 100
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -124,6 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myId: 9
+  canPickUp: 1
 --- !u!114 &11468432
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -139,6 +142,16 @@ MonoBehaviour:
   realRotation: {x: 0, y: 0, z: 0, w: 1}
   myPosition: {x: 0, y: 0, z: 0}
   myRotation: {x: 0, y: 0, z: 0, w: 0}
+  grabItem: {fileID: 0}
+  realHolding: 0
+  realHoldingWhat: 0
+  realParent: 
+  myHolding: 0
+  myHoldingWhat: 0
+  myParent: 
+  lastPosition: {x: 0, y: 0, z: 0}
+  lastRotation: {x: 0, y: 0, z: 0, w: 0}
+  holdingWhat: 0
 --- !u!114 &11496294
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -196,6 +209,14 @@ Prefab:
       propertyPath: ObservedComponents.Array.data[1]
       value: 
       objectReference: {fileID: 11468432}
+    - target: {fileID: 0}
+      propertyPath: m_AngularDrag
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Mass
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 107866}
